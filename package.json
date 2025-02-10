@@ -1,0 +1,57 @@
+{
+  "name": "generatesnippet",
+  "displayName": "Generate Snippet",
+  "description": "Generate a snippet from the selection.",
+  "repository": {"type": "git", "url": "https://github.com/tiwabs/generatesnippet", "directory": "extension"},
+  "icon": "generatesnippet_logo.png",
+  "version": "1.0.0",
+  "publisher": "Tiwabs",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.generateSnippet",
+        "title": "Generate Snippet"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.generateSnippet",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
