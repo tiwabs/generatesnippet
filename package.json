@@ -5,7 +5,7 @@
   "repository": {"type": "git", "url": "https://github.com/tiwabs/generatesnippet", "directory": "extension"},
   "icon": "generatesnippet_logo.png",
   "version": "1.0.0",
-  "publisher": "Tiwabs",
+  "publisher": "tiwabs",
   "engines": {
     "vscode": "^1.82.0"
   },
